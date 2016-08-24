@@ -1,0 +1,31 @@
+{
+  "name": "cordova-plugin-scfashioncommon",
+  "version": "1.0.0",
+  "description": "Scfashion Common Plugin",
+  "cordova": {
+    "id": "cordova-plugin-scfashioncommon",
+    "platforms": [
+      "android",
+      "ios"
+    ]
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/dayu198501/cordova-plugin-scfashioncommon"
+  },
+  "keywords": [
+    "cordova",
+    "ecosystem:cordova",
+    "cordova-android",
+    "cordova-ios"
+  ],
+  "scripts": {
+    "test": "npm run jshint",
+    "jshint": "node node_modules/jshint/bin/jshint www && node node_modules/jshint/bin/jshint src && node node_modules/jshint/bin/jshint tests"
+  },
+  "author": "DAYU",
+  "license": "Apache-2.0",
+  "devDependencies": {
+    "jshint": "^2.6.0"
+  }
+}

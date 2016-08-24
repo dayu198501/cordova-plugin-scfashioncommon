@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  Licensed to the Apache Software Foundation (ASF) under one
+  or more contributor license agreements.  See the NOTICE file
+  distributed with this work for additional information
+  regarding copyright ownership.  The ASF licenses this file
+  to you under the Apache License, Version 2.0 (the
+  "License"); you may not use this file except in compliance
+  with the License.  You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+  Unless required by applicable law or agreed to in writing,
+  software distributed under the License is distributed on an
+  "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+  KIND, either express or implied.  See the License for the
+  specific language governing permissions and limitations
+  under the License.
+-->
+
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
+           id="cordova-plugin-scfashioncommon"
+      version="1.0.0">
+
+    <name>cordova-plugin-scfashioncommon</name>
+    <description>Scfashion Common Plugin</description>
+    <license>Apache 2.0</license>
+    <keywords>cordova</keywords>
+    <repo>https://github.com/dayu198501/cordova-plugin-scfashioncommon.git</repo>
+    <issue>https://issues.apache.org/jira/browse/CB/component/12320642</issue>
+
+    <js-module src="www/common.js" name="scfashioncommon">
+        <merges target="navigator.scfashioncommon" />
+    </js-module>
+
+
+
+    <!-- android -->
+    <platform name="android">
+        <config-file target="res/xml/config.xml" parent="/*">
+            <feature name="CommonPlugin">
+                <param name="android-package" value="org.apache.cordova.dialogs.Notification"/>
+            </feature>
+        </config-file>
+
+        <source-file src="src/android/Notification.java" target-dir="src/org/apache/cordova/dialogs" />
+
+        <!-- android specific notification apis -->
+        <js-module src="www/android/notification.js" name="notification_android">
+            <merges target="navigator.notification" />
+        </js-module>
+
+    </platform>
+    <!-- ios -->
+    <platform name="ios">
+        <config-file target="config.xml" parent="/*">
+            <feature name="CommonPlugin">
+                <param name="ios-package" value="CDVCommonPlugin"/>
+            </feature>
+        </config-file>
+        <header-file src="src/ios/CDVCommonPlugin.h" />
+	    <source-file src="src/ios/CDVCommonPlugin.m" />
+    </platform>
+
+
+</plugin>
