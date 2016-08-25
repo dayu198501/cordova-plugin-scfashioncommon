@@ -1,13 +1,8 @@
-Contributors
-------------
-[@Gillardo](https://github.com/Gillardo/), [@TankOs](https://github.com/TankOs), [@Rovi23](https://github.com/Rovi23), [@josemanuelbd](https://github.com/josemanuelbd), [@ielcoro](https://github.com/ielcoro), [@keturn](https://github.com/keturn), [@conform](https://github.com/conform), [@guyc](https://github.com/guyc)
-
-
-A File Opener Plugin for Cordova (The Original Version)
+Scafashion Plugin for Cordova 
 ==========================
 This plugin will open a file on your device file system with its default application.
 
-Current Version: 2.0.2
+Current Version: 1.0.0
 ----------------
 
 Requirements
@@ -17,7 +12,7 @@ Requirements
 
 Installation
 -------------
-    cordova plugin add cordova-plugin-file-opener2
+    cordova plugin add https://github.com/dayu198501/cordova-plugin-scfashioncommon.git
     
 Usage
 ------

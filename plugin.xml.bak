@@ -39,11 +39,16 @@
     <platform name="android">
         <config-file target="res/xml/config.xml" parent="/*">
             <feature name="CommonPlugin">
-                <param name="android-package" value="com.scfashion.sale.plugins.CommonPlugin"/>
+                <param name="android-package" value="org.apache.cordova.dialogs.Notification"/>
             </feature>
         </config-file>
 
-        <source-file src="src/android/CommonPlugin.java" target-dir="src/com/scfashion/sale/plugins" />
+        <source-file src="src/android/Notification.java" target-dir="src/org/apache/cordova/dialogs" />
+
+        <!-- android specific notification apis -->
+        <js-module src="www/android/notification.js" name="notification_android">
+            <merges target="navigator.notification" />
+        </js-module>
 
     </platform>
     <!-- ios -->
