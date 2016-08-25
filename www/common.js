@@ -1,23 +1,8 @@
-cordova.define("com.scfashion.sale.plugins.CommonPlugin", function (require, exports, module) {
-    /**
-     * cordova is available under *either* the terms of the modified BSD license *or* the
-     * MIT License (2008). See http://opensource.org/licenses/alphabetical for full text.
-     *
-     * Copyright (c) Matt Kane 2010
-     * Copyright (c) 2011, IBM Corporation
-     */
+cordova.define("cordova-plugin-scfashioncommon.scfashioncommon", function(require, exports, module) {
 
-    var CommonIOS = function (require, exports, module) {
+   var exec = require("cordova/exec");
 
-        var exec = require("cordova/exec");
-
-        /**
-         * Constructor.
-         *
-         * @returns {BarcodeScanner}
-         */
-        function CommonPlugin() {
-        };
+   module.exports = {
 
         /**
          * Read code from scanner.
@@ -29,7 +14,7 @@ cordova.define("com.scfashion.sale.plugins.CommonPlugin", function (require, exp
          *    }
          * @param {Function} errorCallback
          */
-        CommonPlugin.prototype.doNativeFunction = function (successCallback, errorCallback, method, parameter) {
+        doNativeFunction : function (successCallback, errorCallback, method, parameter) {
             if (errorCallback == null) {
                 errorCallback = function () {
                 };
@@ -46,17 +31,17 @@ cordova.define("com.scfashion.sale.plugins.CommonPlugin", function (require, exp
             }
             // exec(successCallback, errorCallback, 'CommonPlugin', method, parameter);
             exec(successCallback, errorCallback, 'CommonPlugin', method, parameter);
-        };
+        },
 
-        CommonPlugin.prototype.getUserInfo = function (successCallback, errorCallback) {
+        getUserInfo : function (successCallback, errorCallback) {
             if (errorCallback == null) {
                 errorCallback = function () {
                 };
             }
             exec(successCallback, errorCallback, 'CommonPlugin', "getUserInfo", []);
-        };
+        },
 
-        CommonPlugin.prototype.setUserInfo = function (successCallback, errorCallback, phone, guid) {
+        setUserInfo : function (successCallback, errorCallback, phone, guid) {
             if (errorCallback == null) {
                 errorCallback = function () {
                 };
@@ -64,52 +49,44 @@ cordova.define("com.scfashion.sale.plugins.CommonPlugin", function (require, exp
             exec(successCallback, errorCallback, 'CommonPlugin', "setUserInfo", [
                 {"phone": phone, "guid": guid}
             ]);
-        };
+        },
 
-        CommonPlugin.prototype.getVersionAndRegistrationID = function (successCallback, errorCallback) {
+        getVersionAndRegistrationID : function (successCallback, errorCallback) {
             if (errorCallback == null) {
                 errorCallback = function () {
                 };
             }
             exec(successCallback, errorCallback, 'CommonPlugin', "getVersionAndRegistrationID", []);
-        };
+        },
 
-        CommonPlugin.prototype.clearUserInfo = function () {
+        clearUserInfo : function () {
             exec(function () {
             }, function () {
             }, 'CommonPlugin', "clearUserInfo", []);
-        };
+        },
 
-        CommonPlugin.prototype.openNewPage = function (page) {
+        openNewPage : function (page) {
             exec(function () {
             }, function () {
             }, 'CommonPlugin', "openNewPage", [
                 {"page": page}
             ]);
-        };
+        },
 
-        CommonPlugin.prototype.exitApp = function () {
+        exitApp : function () {
             exec(function () {
             }, function () {
             }, 'CommonPlugin', "exitApp", []);
-        };
+        },
 
-        CommonPlugin.prototype.log = function (info) {
+        log : function (info) {
 
             exec(function () {
             }, function () {
             }, 'CommonPlugin', "log", [
                 {"info": info}
             ]);
-        };
-
-        var commonPlugin = new CommonPlugin();
-        module.exports = commonPlugin;
-
-    }
-
-    CommonIOS(require, exports, module);
-
-    cordova.define("cordova/plugins/CommonPlugin", CommonIOS);
+        },
+    };
 
 });
