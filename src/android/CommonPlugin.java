@@ -1,4 +1,4 @@
-package com.scfashion.sale.plugins;
+ï»¿package com.scfashion.sale.plugins;
 
 import org.apache.cordova.CallbackContext;
 import org.apache.cordova.CordovaPlugin;
@@ -83,12 +83,12 @@ public class CommonPlugin extends CordovaPlugin {
 	}
 
 	/**
-	 * »ñÈ¡°æ±¾ºÅ
+	 * è·å–ç‰ˆæœ¬å·
 	 * 
-	 * @return µ±Ç°Ó¦ÓÃµÄ°æ±¾ºÅ
+	 * @return å½“å‰åº”ç”¨çš„ç‰ˆæœ¬å·
 	 * @throws NameNotFoundException
 	 *             { Command: "902", GUID: "12345678", EncryptKey:
-	 *             "",REGISTRATION_ID:¡±xxxxxxxxxx¡±, Version:¡±1.0.0.0¡±}
+	 *             "",REGISTRATION_ID:â€xxxxxxxxxxâ€, Version:â€1.0.0.0â€}
 	 * @throws JSONException
 	 */
 	private void getVersionAndRegistrationID() throws NameNotFoundException, JSONException {
